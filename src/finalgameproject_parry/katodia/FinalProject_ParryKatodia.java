@@ -30,28 +30,24 @@ public class FinalProject_ParryKatodia extends JComponent implements KeyListener
     
     // game variables 
     // draw my ship on the screen
-    Rectangle myship = new Rectangle(400,525,30,22);
+    Rectangle myship = new Rectangle(400,650,30,22);
     int speed = 5;
     // left and right key variable 
     boolean left = false; 
     boolean right = false; 
     // draw the asteroid on the screen
-    Random randGen = new Random();
-    int asteroidX = randGen.nextInt();
-    int asteroidY = randGen.nextInt();
-    Rectangle[] asteroids = new Rectangle[25];
-    int asteroidWidth = 25;
-    int asteroidLength = 25; 
-    int asteroidSpacing = 75;
-    
-    
-    Rectangle asteroid0 = new Rectangle(782, 400, asteroidX, asteroidY); 
-    Rectangle asteroid1 = new Rectangle(672, 300, 50, 50);
-    Rectangle asteroid2 = new Rectangle(300, 500, 50, 50);
-    Rectangle asteroid3 = new Rectangle(425, 100, 50, 50); 
-    Rectangle asteroid4 = new Rectangle(525, 275, 50, 50);
-    Rectangle asteroid5 = new Rectangle(601, 300, 50, 50);
-    
+    Rectangle asteroid0 = new Rectangle(110, 189, 50, 50); 
+    Rectangle asteroid1 = new Rectangle(210, 248, 50, 50);
+    Rectangle asteroid2 = new Rectangle(310, 310, 50, 50);
+    Rectangle asteroid3 = new Rectangle(410, 400, 50, 50); 
+    Rectangle asteroid4 = new Rectangle(510, 108, 50, 50);
+    Rectangle asteroid5 = new Rectangle(610, 297 , 50, 50);
+    Rectangle asteroid6 = new Rectangle(710, 378, 50, 50); 
+    Rectangle asteroid7 = new Rectangle(190, 400, 50, 50);
+    Rectangle asteroid8 = new Rectangle(290, 100, 50, 50);
+    Rectangle asteroid9 = new Rectangle(390, 200, 50, 50); 
+    Rectangle asteroid10 = new Rectangle(490, 375, 50, 50);
+    Rectangle asteroid11 = new Rectangle(590, 400, 50, 50);
      
 
     
@@ -79,6 +75,20 @@ public class FinalProject_ParryKatodia extends JComponent implements KeyListener
         g.fillRect(asteroid3.x, asteroid3.y, asteroid3.height, asteroid3.width);
         g.fillRect(asteroid4.x, asteroid4.y, asteroid4.height, asteroid4.width);
         g.fillRect(asteroid5.x, asteroid5.y, asteroid5.height, asteroid5.width);
+        g.fillRect(asteroid6.x, asteroid6.y, asteroid6.height, asteroid6.width);
+        g.fillRect(asteroid7.x, asteroid7.y, asteroid7.height, asteroid7.width);
+        g.fillRect(asteroid8.x, asteroid8.y, asteroid8.height, asteroid8.width);
+        g.fillRect(asteroid9.x, asteroid9.y, asteroid9.height, asteroid9.width);
+        g.fillRect(asteroid10.x, asteroid10.y, asteroid10.height, asteroid10.width);
+        g.fillRect(asteroid11.x, asteroid11.y, asteroid11.height, asteroid11.width);
+        
+        
+        
+        
+        
+        
+        
+        
         // GAME DRAWING ENDS HERE
     }
     
@@ -100,16 +110,24 @@ public class FinalProject_ParryKatodia extends JComponent implements KeyListener
             startTime = System.currentTimeMillis();
             
             // all your game rules and move is done in here
-            // GAME LOGIC STARTS HERE 
-            if(myship.x >= 800 - myship.width){
+            // GAME LOGIC STARTS HERE
+            
+            //get the ship to stop on the edge pf the screen
+            if(myship.x == 810 - myship.width){
                 right = false; 
-            }  
+            } 
+            if(myship.x == 0){
+                left = false; 
+            }
+            // left and right movement for the ship
             if(left == true){
                 myship.x = myship.x - speed;    
             }
             if(right == true){
                 myship.x = myship.x + speed;
             }
+            
+          
             
             
             
